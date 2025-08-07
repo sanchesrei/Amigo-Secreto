@@ -11,7 +11,11 @@ function adicionarAmigo() {
     }
     let regex = /^[A-Za-z]+$/;
     if (!regex.test(nomeAmigo)) {
-        alert('Por favor insira um nome valido');
+        alert('Por favor, insira apenas letras.');
+        return;
+    }
+    if (amigos.includes(nomeAmigo)) {
+        alert('Este nome já foi adicionado. Por favor, insira um nome diferente.');
         return;
     }
     amigos.push(nomeAmigo);
