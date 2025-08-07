@@ -12,4 +12,17 @@ function adicionarAmigo() {
     amigos.push(nomeAmigo);
     campoNome.value = '';
     
+    ExibirAmigos();
+    
 }
+ function ExibirAmigos() {
+    let lista = document.getElementById('listaAmigos');
+    lista.innerHTML = '';
+
+for (let amigo of amigos) {
+    lista.innerHTML += `<li>${amigo}</li>`;
+
+}
+    
+ }
+
