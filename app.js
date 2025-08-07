@@ -9,6 +9,11 @@ function adicionarAmigo() {
 
         return;
     }
+    let regex = /^[A-Za-z]+$/;
+    if (!regex.test(nomeAmigo)) {
+        alert('Por favor insira um nome valido');
+        return;
+    }
     amigos.push(nomeAmigo);
     campoNome.value = '';
 
