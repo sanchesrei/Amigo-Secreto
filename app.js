@@ -11,11 +11,11 @@ function adicionarAmigo() {
     }
     amigos.push(nomeAmigo);
     campoNome.value = '';
-    
-    ExibirAmigos();
+
+    exibirAmigos();
     
 }
- function ExibirAmigos() {
+ function exibirAmigos() {
     let lista = document.getElementById('listaAmigos');
     lista.innerHTML = '';
 
@@ -25,4 +25,27 @@ for (let amigo of amigos) {
 }
     
  }
+
+ function sortearAmigo() {
+    if (amigos.length < 2) {
+        alert('Adicione mais de uma pessoa pra realizar o sorteio');
+        return;
+        
+    }
+    let numeroSorteado = Math.floor(Math.random() * amigos.length);
+    let amigoSorteado = amigos[numeroSorteado];
+
+    exibirSorteio(amigoSorteado);
+
+  
+ }
+
+ function exibirSorteio(amigoSorteado) {
+    let resultado = document.getElementById('resultado');
+    resultado.innerHTML = '';
+    resultado.innerHTML += `<li>${amigoSorteado}</li>`;
+
+ }
+
+
 
